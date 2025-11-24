@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurztrips & Reisetipps</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero-Bereich -->
+  <header class="hero" role="banner" aria-labelledby="site-title">
+    <img src="hero.jpg" alt="Berglandschaft als Inspiration für Kurztrips" class="hero-img" loading="lazy">
+    <div class="hero-text">
+      <h1 id="site-title">Kurztrips & Reisetipps</h1>
+      <p>Deine Inspiration für das nächste Wochenende!</p>
+    </div>
+
+    <!-- Hauptnavigation (zielt direkt auf die Heading-IDs) -->
+    <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#intro-heading">Start</a></li>
+        <li><a href="#ausflugsziele-heading">Ausflugsziele</a></li>
+        <li><a href="#berichte-heading">Erfahrungsberichte</a></li>
+        <li><a href="#formular-heading">Tipp einreichen</a></li>
+      </ul>
+    </nav>
+
+    <!-- Reiter / Tabs direkt unter dem Hero (zielt direkt auf die Heading-IDs) -->
+    <nav class="tabs-nav" role="navigation" aria-label="Schnellnavigation (Reiter)">
+      <ul>
+        <li><a href="#ausflugsziele-heading">Ausflugsziele</a></li>
+        <li><a href="#geheimtipps-heading">Geheimtipps</a></li>
+        <li><a href="#packlisten-heading">Packlisten</a></li>
+        <li><a href="#berichte-heading">Erfahrungsberichte</a></li>
+        <li><a href="#formular-heading">Tipp einreichen</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main" class="container" aria-labelledby="main-heading">
+    <h2 id="main-heading" class="visually-hidden" tabindex="-1">Hauptinhalt</h2>
+
+    <!-- Einleitung -->
+    <section id="intro" class="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading" tabindex="-1">Willkommen!</h2>
+      <p>Hier findest du die besten Tipps für spontane Kurztrips, Wochenendreisen und Geheimtipps in deiner Region. Lass dich inspirieren und teile auch deine Erfahrungen!</p>
+    </section>
+
+    <!-- Ausflugsziele im Kartenlayout -->
+    <section id="ausflugsziele" tabindex="-1" aria-labelledby="ausflugsziele-heading">
+      <h2 id="ausflugsziele-heading" tabindex="-1">Ausflugsziele</h2>
+      <div class="card-grid" role="list">
+        <article class="card" role="listitem" aria-labelledby="bodensee-title">
+          <img src="ziel1.jpg" alt="Sonnenuntergang am Bodensee" loading="lazy">
+          <h3 id="bodensee-title">Bodensee</h3>
+          <p>Perfekt für Wanderungen und entspannte Stunden am Wasser.</p>
+        </article>
+        <article class="card" role="listitem" aria-labelledby="sw-title">
+          <img src="ziel2.jpg" alt="Waldpfad im Schwarzwald" loading="lazy">
+          <h3 id="sw-title">Schwarzwald</h3>
+          <p>Wandern, Wellness und regionale Küche genießen.</p>
+        </article>
+        <article class="card" role="listitem" aria-labelledby="freiburg-title">
+          <img src="ziel3.jpg" alt="Stadtbild Freiburgs" loading="lazy">
+          <h3 id="freiburg-title">Freiburg</h3>
+          <p>Charmante Altstadt, tolle Cafés und Sonnenstunden genießen.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Geheimtipps als Liste -->
+    <section id="geheimtipps" tabindex="-1" aria-labelledby="geheimtipps-heading">
+      <h2 id="geheimtipps-heading" tabindex="-1">Geheimtipps</h2>
+      <ul class="tipplist" role="list">
+        <li>Picknick im Stadtgarten Konstanz</li>
+        <li>Wanderung auf den Hohenhewen</li>
+        <li>Versteckte Badestellen am Untersee</li>
+        <li>Frühstücken im „Café Pow“ in Freiburg</li>
+      </ul>
+    </section>
+
+    <!-- Packlisten als Akkordeon-Karten -->
+    <section id="packlisten" tabindex="-1" aria-labelledby="packlisten-heading">
+      <h2 id="packlisten-heading" tabindex="-1">Packlisten</h2>
+      <details>
+        <summary>👜 Allgemein</summary>
+        <ul>
+          <li>Ladekabel</li>
+          <li>Musikbox</li>
+          <li>Powerbank</li>
+          <li>Sonnenbrille</li>
+          <li>Regenschirm</li>
+        </ul>
+      </details>
+      <details>
+        <summary>🧴 Bad & Pflege</summary>
+        <ul>
+          <li>Zahnpasta</li>
+          <li>Zahnbürste</li>
+          <li>Sonnencreme</li>
+        </ul>
+      </details>
+      <details>
+        <summary>👗 Kleidung</summary>
+        <ul>
+          <li>Wetterangepasste Kleidung</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Erfahrungsberichte als Karten -->
+    <section id="berichte" tabindex="-1" aria-labelledby="berichte-heading">
+      <h2 id="berichte-heading" tabindex="-1">Erfahrungsberichte</h2>
+      <div class="bericht-grid">
+        <article class="bericht-card" aria-labelledby="b1-title">
+          <h3 id="b1-title">Mein spontaner Trip nach Freiburg</h3>
+          <p>Letzten Monat habe ich spontan Freiburg besucht – eine wunderschöne Altstadt, kleine Cafés und tolle Natur!</p>
+        </article>
+        <article class="bericht-card" aria-labelledby="b2-title">
+          <h3 id="b2-title">Wandern am Bodensee</h3>
+          <p>Die Uferwege am Bodensee sind ideal für erholsame Spaziergänge und bieten tolle Ausblicke.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Formular für Reisetipp -->
+    <section id="formular" tabindex="-1" aria-labelledby="formular-heading">
+      <h2 id="formular-heading" tabindex="-1">Reisetipp einreichen</h2>
+      <form aria-label="Reisetipp einreichen" method="post" action="#" novalidate>
+        <p id="form-note" class="form-note">Pflichtfelder sind mit * markiert.</p>
+
+        <label for="name">Dein Name: *</label>
+        <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-help">
+        <span id="name-help" class="visually-hidden">Vorname und Nachname bevorzugt.</span>
+
+        <label for="email">Deine E-Mail: *</label>
+        <input type="email" id="email" name="email" required aria-required="true"
+               pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+               aria-describedby="email-help">
+        <span id="email-help" class="form-hint">Format: name@domain.tld</span>
+
+        <label for="tipp">Dein Tipp: *</label>
+        <textarea id="tipp" name="tipp" required aria-required="true" aria-describedby="tipp-help"></textarea>
+        <span id="tipp-help" class="visually-hidden">Beschreibe Ort, Aktivität, Anfahrt, Tipps für Menschen mit Mobilitätseinschränkungen.</span>
+
+        <button type="submit">Absenden</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer navigation (dritte Navigation) -->
+  <footer role="contentinfo">
+    <!-- Footer-Navigation entfernt, bleibt nur Copyright -->
+    <p>&copy; 2025 Kurztrips & Reisetipps</p>
+  </footer>
+</body>
+</html>
