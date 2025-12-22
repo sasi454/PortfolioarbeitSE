@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@700&display=swap');
+
+:root{
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #1b2430;
+  --muted: #58606a;
+  --accent: #0b82a8;
+  --accent-2: #075f73;
+  --card-border: #e9eef2;
+  --radius: 10px;
+  --gap: 1.25rem;
+  --max-width: 1100px;
+  --base: 1rem;
+  --focus: rgba(11,130,168,0.22);
+  --big-heading: clamp(1.6rem, 3.6vw, 2.6rem);
+  --body-size: 1rem;
+  --line-height: 1.6;
+  --shadow: 0 8px 24px rgba(15,25,35,0.06);
+  --scroll-offset: 5.5rem; /* Abstand für Anker-Ziele (anpassen je nach Headerhöhe) */
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html{font-size:100%} /* allows user zoom */
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:var(--line-height);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:var(--body-size);
+}
+
+/* visually-hidden utility */
+.visually-hidden{
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0; padding: 0; margin: -1px;
+}
+
+/* smooth scrolling bei Anker-Links */
+html { scroll-behavior: smooth; }
+
+/* Offset, damit Anker nicht hinter Header/Sticky-Nav landet */
+section[id], h2[id], article[id] { scroll-margin-top: var(--scroll-offset); }
+
+/* sichtbare Hervorhebung, hilft Screenreader/Nutzer Orientierung */
+section:target { outline: 3px solid rgba(11,130,168,0.18); outline-offset: 6px; background-color: rgba(11,130,168,0.02); }
+
+/* Utility container */
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+/* Skip link */
+.skip-link{
+  position:fixed;left:1rem;top:1rem;background:#fff;color:var(--accent);
+  padding:.5rem .75rem;border-radius:6px;z-index:999;
+  transform:translateY(-140%);transition:transform .12s ease;
+  box-shadow:var(--shadow);text-decoration:none;font-weight:600;
+}
+.skip-link:focus{transform:translateY(0);outline:3px solid var(--focus);outline-offset:3px}
+
+/* HERO */
+.hero{
+  position:relative;min-height:36vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;padding:2rem 0;margin-bottom:1.5rem;
+}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(0.65)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.3));z-index:1}
+.hero-text{position:relative;z-index:2;text-align:center;padding:1rem 1.5rem;max-width:900px}
+.hero-text h1{font-family:"Merriweather", Georgia, serif;font-size:var(--big-heading);margin:0;color:var(--text)}
+.hero-text p{margin:.35rem 0 0;color:var(--muted)}
+
+/* NAVIGATION - Haupt, Tabs, Footer */
+.main-nav ul, .tabs-nav ul, .footer-nav ul{list-style:none;padding:0;margin:0;display:flex;gap:.75rem;align-items:center;justify-content:flex-start}
+.main-nav a, .tabs-nav a, .footer-nav a{color:var(--accent);text-decoration:none;padding:.6rem .85rem;border-radius:8px;font-weight:600;border:1px solid transparent;display:inline-flex;align-items:center;gap:.4rem;min-height:2.4rem}
+.main-nav a:hover, .tabs-nav a:hover, .main-nav a:focus, .tabs-nav a:focus{color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 20px rgba(11,130,168,0.12);outline:none}
+.main-nav a[aria-current="page"], .tabs-nav a[aria-current="page"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 8px 20px rgba(11,130,168,0.12)}
+
+/* Mobile menu using details/summary */
+.mobile-menu summary{list-style:none;cursor:pointer;display:none}
+.mobile-menu summary.nav-toggle-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem .6rem;border-radius:6px;background:#fff;font-weight:700;box-shadow:var(--shadow);border:1px solid #eef4f6}
+.mobile-menu summary:focus{outline:3px solid var(--focus);outline-offset:3px}
+
+/* CARD GRID for Ausflugsziele */
+.card-grid{display:flex;gap:var(--gap);margin-top:1rem;overflow-x:auto;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.card{background:var(--surface);border-radius:var(--radius);overflow:hidden;border:2px solid var(--accent);box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease;padding:0;flex:0 0 320px;min-width:260px;scroll-snap-align:start}
+.card img{width:100%;height:auto;display:block}
+
+/* Packlisten, details, bericht-grid */
+#packlisten details{ display:block; width:100%; border:2px solid var(--accent); border-radius:8px; padding:.75rem; background:var(--surface); margin:0 0 var(--gap) 0; }
+#packlisten details summary{ margin:0 0 .5rem; cursor:pointer; font-weight:700; }
+#packlisten details summary:focus{ outline:3px solid var(--focus); outline-offset:3px; }
+
+.bericht-grid{display:grid;gap:var(--gap);margin-top:1rem}
+.bericht-card{background:transparent;border-radius:8px;padding:1rem;border:1px solid #f0f4f6}
+.bericht-card h3{font-family:"Merriweather",Georgia,serif;margin:.25rem 0;color:var(--text)}
+
+/* FORM styling + HTML validation visuals (CSS-only error messages) */
+form{display:grid;gap:.6rem;max-width:720px;padding-bottom:1rem}
+label{font-weight:700;font-size:.95rem}
+input, textarea, button{font-family:inherit;font-size:1rem}
+input[type="text"], input[type="email"], textarea{padding:.75rem;border:1px solid #e6edf2;border-radius:8px;background:#fff;color:var(--text)}
+textarea{min-height:120px;resize:vertical}
+
+/* Hide user-visible error by default */
+.form-error{display:none;color:#d6453b;font-size:.95rem;margin-top:.25rem}
+
+/* Show error when element is invalid while focused OR when user started typing (placeholder-shown hack) */
+input:focus:invalid + .form-error, textarea:focus:invalid + .form-error, input:not(:placeholder-shown):invalid + .form-error, textarea:not(:placeholder-shown):invalid + .form-error{display:block}
+
+/* Visual invalid styling */
+input:invalid, textarea:invalid{box-shadow:0 0 0 4px rgba(255,165,0,0.08);border-color:#f39c12}
+input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:#d6453b; box-shadow:0 0 0 4px rgba(214,69,59,0.06);}
+
+/* Submit button */
+button[type="submit"]{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:none;padding:.85rem 1rem;border-radius:8px;cursor:pointer;font-weight:700;box-shadow:0 8px 20px rgba(11,130,168,0.1)}
+button[type="submit"]:focus{outline:3px solid rgba(255,255,255,0.12);outline-offset:3px}
+
+/* Footer */
+.site-footer{padding:2rem 1rem;text-align:center;color:var(--muted);font-size:.95rem;margin-top:2rem}
+.footer-nav{margin-bottom:.6rem}
+
+/* Navigation Bar */
+.nav-bar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  padding: .5rem 1rem;
+}
+.nav-bar ul{justify-content:center;}
+
+/* Responsive behaviour & CSS-only mobile menu display */
+@media (max-width:860px){.card img{height:160px}}
+@media (max-width:700px){
+  .container{padding:.6rem}
+  .mobile-menu summary.nav-toggle-btn{display:block;position:fixed;left:1rem;top:1rem;z-index:60}
+  /* hide desktop nav until details open */
+  /* keep main navigation visible on mobile (no mobile-menu markup used) */
+  .main-nav{display:flex}
+  .tabs-nav{display:none}
+  .footer-nav{display:none}
+  /* when details open, show menus (details open state) */
+  .mobile-menu[open] .main-nav{display:flex;flex-direction:column;gap:.5rem;background:#fff;padding:.75rem;border-radius:8px;position:fixed;left:50%;transform:translateX(-50%);top:56px;z-index:55;box-shadow:var(--shadow)}
+  .mobile-menu[open] .tabs-nav{display:block;position:fixed;left:50%;transform:translateX(-50%);top:calc(56px + 1.5rem);background:#fff;padding:.6rem;border-radius:8px;z-index:54}
+  .hero-text h1{font-size:1.6rem}
+}
+
+/* Accessibility: respects reduced motion */
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+
+/* High contrast mode handling */
+@media (prefers-contrast:more){ body{background:#fff;color:#000} a:focus,input:focus,textarea:focus,button:focus{outline:4px solid #000} }
+
+/* Touch / larger hit targets helpful for motor impaired users */
+a, button{touch-action:manipulation}
+a{min-height:2.2rem;display:inline-flex;align-items:center}
+
+/* Focus visible */
+:focus{outline: none}
+:focus-visible{outline: 3px solid var(--accent);outline-offset:3px}
+
+/* Responsive images helper */
+.responsive-media{max-width:100%;height:auto;display:block}
