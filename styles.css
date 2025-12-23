@@ -126,13 +126,43 @@ button[type="submit"]:focus{outline:3px solid rgba(255,255,255,0.12);outline-off
 .site-footer{padding:2rem 1rem;text-align:center;color:var(--muted);font-size:.95rem;margin-top:2rem}
 .footer-nav{margin-bottom:.6rem}
 
+/* Navigation Bar */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  padding: .5rem 1rem;
+  width: 100%;
+}
+
+/* UL der Nav zentrieren */
+.nav-bar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .75rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Abstand, damit die fixe Navi nichts überdeckt */
+main.container {
+  margin-top: 1.5rem; /* bei Bedarf anpassen (z.B. 3.5rem, 5rem) */
+}
+
 /* Responsive behaviour & CSS-only mobile menu display */
 @media (max-width:860px){.card img{height:160px}}
 @media (max-width:700px){
   .container{padding:.6rem}
   .mobile-menu summary.nav-toggle-btn{display:block;position:fixed;left:1rem;top:1rem;z-index:60}
   /* hide desktop nav until details open */
-  .main-nav{display:none}
+  /* keep main navigation visible on mobile (no mobile-menu markup used) */
+  .main-nav{display:flex}
   .tabs-nav{display:none}
   .footer-nav{display:none}
   /* when details open, show menus (details open state) */
@@ -157,3 +187,75 @@ a{min-height:2.2rem;display:inline-flex;align-items:center}
 
 /* Responsive images helper */
 .responsive-media{max-width:100%;height:auto;display:block}
+
+.card-grid {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;       
+  padding-bottom: 1rem;   
+  -webkit-overflow-scrolling: touch; 
+  scroll-snap-type: x mandatory;     
+}
+.card {
+  flex: 0 0 320px;       
+  scroll-snap-align: start;
+  margin-bottom: 0; 
+  display: block;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  transition: box-shadow .2s, border-color .2s;
+  width: 320px;
+  max-width: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.card[open] {
+  box-shadow: 0 16px 32px rgba(11,130,168,0.18), var(--shadow);
+  border-color: var(--accent-2);
+  z-index: 10;
+}
+
+.card summary {
+  cursor: pointer;
+  outline: none;
+  display: block;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: .5rem;
+  margin-bottom: 0;
+  background: transparent;
+}
+
+.card-details {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0 0 var(--radius) var(--radius);
+  border-top: none;
+  box-shadow: none;
+  animation: fadeIn .3s;
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.detail-img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px);}
+  to { opacity: 1; transform: translateY(0);}
+}
