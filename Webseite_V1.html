@@ -7,28 +7,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <a href="#main" class="skip-link">Direkt zum Inhalt springen</a>
+    
   <!-- Hero-Bereich -->
   <header class="hero" role="banner" aria-labelledby="site-title">
-    <img src="hero.jpg" alt="Berglandschaft als Inspiration für Kurztrips" class="hero-img" loading="lazy">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Schwarzwald_Hochstrasse.jpg" alt="Berglandschaft als Inspiration für Kurztrips" class="hero-img" loading="lazy">
     <div class="hero-text">
-      <h1 id="site-title">Kurztrips HALLOO & Reisetipps</h1>
+      <h1 id="site-title">Kurztrips & Reisetipps</h1>
       <p>Deine Inspiration für das nächste Wochenende!</p>
     </div>
+  </header>
 
     <!-- Hauptnavigation (zielt direkt auf die Heading-IDs) -->
-    <nav class="main-nav" role="navigation" aria-label="Hauptnavigation">
+  <nav class="main-nav nav-bar" role="navigation" aria-label="Hauptnavigation">
       <ul>
         <li><a href="#intro-heading">Start</a></li>
-        <li><a href="#ausflugsziele-heading">Ausflugsziele</a></li>
-        <li><a href="#berichte-heading">Erfahrungsberichte</a></li>
-        <li><a href="#formular-heading">Tipp einreichen</a></li>
-      </ul>
-    </nav>
-
-    <!-- Reiter / Tabs direkt unter dem Hero (zielt direkt auf die Heading-IDs) -->
-    <nav class="tabs-nav" role="navigation" aria-label="Schnellnavigation (Reiter)">
-      <ul>
         <li><a href="#ausflugsziele-heading">Ausflugsziele</a></li>
         <li><a href="#geheimtipps-heading">Geheimtipps</a></li>
         <li><a href="#packlisten-heading">Packlisten</a></li>
@@ -36,7 +29,6 @@
         <li><a href="#formular-heading">Tipp einreichen</a></li>
       </ul>
     </nav>
-  </header>
 
   <main id="main" role="main" class="container" aria-labelledby="main-heading">
     <h2 id="main-heading" class="visually-hidden" tabindex="-1">Hauptinhalt</h2>
@@ -44,30 +36,90 @@
     <!-- Einleitung -->
     <section id="intro" class="intro" aria-labelledby="intro-heading">
       <h2 id="intro-heading" tabindex="-1">Willkommen!</h2>
-      <p>Hier findest du die besten Tipps für spontane Kurztrips, Wochenendreisen und Geheimtipps in deiner Region. Lass dich inspirieren und teile auch deine Erfahrungen!</p>
-    </section>
-
+      <p>
+        Schön, dass du hier bist!<br>
+        Auf dieser Seite erwarten dich die besten Tipps für spontane Kurztrips, spannende Wochenendreisen und echte Geheimtipps direkt in deiner Region.<br>
+        Egal, ob du einfach mal raus möchtest, neue Orte entdecken willst oder Inspiration für deinen nächsten Ausflug suchst – bei uns findest du viele Ideen und praktische Hinweise, um deine Reise unvergesslich zu machen.<br>
+        <br>
+        Lass dich inspirieren, stöbere durch unsere Empfehlungen und teile auch gerne deine eigenen Erfahrungen mit der Community. Zusammen machen wir jeden Kurztrip zum Erlebnis!    </section>
+      </p>
     <!-- Ausflugsziele im Kartenlayout -->
     <section id="ausflugsziele" tabindex="-1" aria-labelledby="ausflugsziele-heading">
-      <h2 id="ausflugsziele-heading" tabindex="-1">Ausflugsziele</h2>
-      <div class="card-grid" role="list">
-        <article class="card" role="listitem" aria-labelledby="bodensee-title">
-          <img src="ziel1.jpg" alt="Sonnenuntergang am Bodensee" loading="lazy">
-          <h3 id="bodensee-title">Bodensee</h3>
-          <p>Perfekt für Wanderungen und entspannte Stunden am Wasser.</p>
-        </article>
-        <article class="card" role="listitem" aria-labelledby="sw-title">
-          <img src="ziel2.jpg" alt="Waldpfad im Schwarzwald" loading="lazy">
-          <h3 id="sw-title">Schwarzwald</h3>
-          <p>Wandern, Wellness und regionale Küche genießen.</p>
-        </article>
-        <article class="card" role="listitem" aria-labelledby="freiburg-title">
-          <img src="ziel3.jpg" alt="Stadtbild Freiburgs" loading="lazy">
-          <h3 id="freiburg-title">Freiburg</h3>
-          <p>Charmante Altstadt, tolle Cafés und Sonnenstunden genießen.</p>
-        </article>
+  <h2 id="ausflugsziele-heading" tabindex="-1">Ausflugsziele</h2>
+  <div class="card-grid" role="list">
+    
+    <!-- Karte Bodensee -->
+    <details class="card">
+      <summary>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/View_of_Lake_Constance_from_Immenstaad_am_Bodensee_%28Germany%29_03.jpg" alt="Aussicht auf Bodensee" class="card-img">
+        <h3>Erlebe den Bodensee</h3>
+        <p>Perfekt für Wanderungen und entspannte Stunden am oder auf dem Wasser.
+        </p>
+        <br>
+        <span style="font-style: italic; color: #555;">Klicke für mehr Details...</span>
+      </summary>
+      <div class="card-details">
+        <p>
+         Der Bodensee begeistert mit vielfältigen Möglichkeiten für Wanderungen, Wassersport und entspannte Ausflüge. <br> Die malerischen Uferwege und die charmanten Orte rund um den See laden zum Entdecken und Verweilen ein.
+          </p>
+          <ul>
+            <li>Erkunde die Region mit dem Fahrrad und genieße die Aussicht bei einer Tour rund um den See.</li>
+            <li>Mach ein Picknick direkt am Wasser und lass die Seele baumeln.</li>
+            <li>Probiere unbedingt die regionale Küche in einem der gemütlichen Restaurants oder Cafés!</li>
+          </ul>
+          <p>
+            Der Bodensee ist das perfekte Ziel für alle, die Natur, Genuss und Aktivitäten verbinden möchten.
+          </p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Staad_-_Lake_Constance_%2823619944939%29.jpg" alt="Weitere Ansicht Bodensee bei Dämmerung" class="detail-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Seepromenade_Meersburg_am_Bodensee_-_panoramio.jpg" alt="Café am Bodensee" class="detail-img">
       </div>
-    </section>
+    </details>
+    
+    <!-- Karte Schwarzwald -->
+    <details class="card">
+      <summary>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Abondand_track_in_the_Black_Forest_at_north_of_Obertal_Baiersbronn_2020-03-11_03.jpg" alt="Waldpfad im Schwarzwald" class="card-img">
+        <h3>Naturgenuss im Schwarzwald</h3>
+        <p>Wandern, Wellness und regionale Küche genießen.</p>
+        <br>
+        <span style="font-style: italic; color: #555;">Klicke für mehr Details...</span>
+      </summary>
+      <div class="card-details">
+        <p>
+          Der Schwarzwald ist das ideale Ziel für alle, die Natur, Erholung und Genuss verbinden möchten. Die dichten Wälder, sanften Hügel und idyllischen Dörfer bieten eine traumhafte Kulisse für ausgedehnte Wanderungen und entspannte Stunden in der Natur.
+        </p>
+        <ul>
+          <li>Erkunde die schönsten Wanderwege und Aussichtspunkte im Schwarzwald.</li>
+          <li>Gönn dir eine Auszeit in einem traditionellen Wellnesshotel oder einer Therme.</li>
+          <li>Besuche regionale Märkte und probiere typische Spezialitäten wie Schwarzwälder Schinken und Kirschtorte.</li>
+        </ul>
+        <p>
+          Im Schwarzwald kannst du wunderbar abschalten, neue Energie tanken und echte Naturerlebnisse genießen.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Schwarzwald_Hochstrasse.jpg" alt="Schwarzwald Hochstraße" class="detail-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/View_of_Lake_Constance_from_Immenstaad_am_Bodensee_%28Germany%29_03.jpg" alt="Schwarzwald Landschaft" class="detail-img">
+      </div>
+    </details>
+    
+    <!-- Karte Freiburg -->
+    <details class="card">
+      <summary>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/May_2005_Freiburg_12.jpg" alt="Stadtbild Freiburgs" class="card-img">
+        <h3>Freiburg</h3>
+        <p>Charmante Altstadt, tolle Cafés und Sonnenstunden genießen.</p>
+      </summary>
+      <div class="card-details">
+        <p>
+          Freiburg ist bekannt für seine schöne Altstadt, das angenehme Klima und die vielen kleinen Cafés.  
+          Tipp: Einen Spaziergang durch das Viertel „Vauban“, einen Ausflug zum Schlossberg und das Münster besichtigen!
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/May_2005_Freiburg_12.jpg" alt="Freiburg Altstadt" class="detail-img">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Schwarzwald_Hochstrasse.jpg" alt="Freiburg Umgebung" class="detail-img">
+      </div>
+    </details>
+
+  </div>
+</section>
 
     <!-- Geheimtipps als Liste -->
     <section id="geheimtipps" tabindex="-1" aria-labelledby="geheimtipps-heading">
